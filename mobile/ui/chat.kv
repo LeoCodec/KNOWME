@@ -1,0 +1,35 @@
+<ChatScreen>:
+    name: 'chat'
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 1, 1, 1, 1
+        
+        MDTopAppBar:
+            title: "Smart Chat"
+            left_action_items: [["arrow-left", lambda x: setattr(root.manager, 'current', 'home')]]
+            elevation: 4
+
+        ScrollView:
+            MDList:
+                id: chat_list
+                padding: "10dp"
+
+        MDBoxLayout:
+            size_hint_y: None
+            height: "70dp"
+            padding: "10dp"
+            spacing: "10dp"
+            md_bg_color: 0.95, 0.95, 0.95, 1
+
+            MDTextField:
+                id: msg_field
+                hint_text: "Type a message..."
+                mode: "fill"
+                size_hint_x: 0.8
+
+            MDIconButton:
+                icon: "send"
+                theme_text_color: "Custom"
+                text_color: app.theme_cls.primary_color
+                on_release: root.send_message()

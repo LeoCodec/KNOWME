@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card" style="text-align: center;">
+    <h2>Welcome to KnowMe Ecosystem</h2>
+    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" style="max-width: 150px; margin: 20px 0;" onerror="this.style.display='none'">
+    <p style="font-size: 1.1rem; margin-bottom: 20px;">
+        This is the Web Component of our distributed system.
+        Here you can manage data that is also visible from the Mobile App.
+    </p>
+    
+    <div style="display: flex; gap: 20px; justify-content: center; margin-top: 30px;">
+        <a href="{{ url_for('profile') }}">
+            <button>Manage Profiles</button>
+        </a>
+        <a href="{{ url_for('chat') }}">
+            <button style="background-color: #00897b;">Try AI Chat</button>
+        </a>
+    </div>
+</div>
+
+<div class="card">
+    <h3>System Status</h3>
+    <p>Backend API: <strong style="color: green;">{{ api_url }}</strong></p>
+    <p>Stack: Flask, SQLAlchemy, JavaScript (Fetch API)</p>
+</div>
+{% endblock %}

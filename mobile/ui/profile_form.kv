@@ -1,0 +1,45 @@
+<ProfileFormScreen>:
+    name: 'profile_form'
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        md_bg_color: 1, 1, 1, 1
+        
+        MDTopAppBar:
+            title: "New Profile"
+            left_action_items: [["arrow-left", lambda x: setattr(root.manager, 'current', 'home')]]
+            elevation: 4
+
+        ScrollView:
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: "24dp"
+                spacing: "20dp"
+                adaptive_height: True
+
+                MDTextField:
+                    id: name_field
+                    hint_text: "Full Name"
+                    icon_right: "account"
+                    mode: "rectangle"
+
+                MDTextField:
+                    id: bio_field
+                    hint_text: "Biography (For NLP)"
+                    helper_text: "We will detect language & keywords"
+                    icon_right: "text-box"
+                    mode: "rectangle"
+                    multiline: True
+                    height: "100dp"
+
+                MDTextField:
+                    id: interests_field
+                    hint_text: "Interests (comma separated)"
+                    icon_right: "star"
+                    mode: "rectangle"
+
+                MDRaisedButton:
+                    text: "Save to Backend"
+                    pos_hint: {"center_x": .5}
+                    size_hint_x: 1
+                    on_release: root.submit_data()

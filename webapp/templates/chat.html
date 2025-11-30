@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>Smart Chat (Simulation)</h2>
+    <p>This chat sends your messages to the system to demonstrate client-server interaction.</p>
+    
+    <div id="chat-box">
+        <div class="msg bot">Hello, I am KnowMe. How can I help you today?</div>
+    </div>
+
+    <form id="chat-form" style="display: flex; gap: 10px;">
+        <input type="text" id="chat-input" placeholder="Type a message..." required autocomplete="off">
+        <button type="submit">Send</button>
+    </form>
+</div>
+{% endblock %}

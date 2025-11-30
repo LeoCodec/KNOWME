@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <h2>Create New Profile</h2>
+    <p style="margin-bottom: 15px; color: #666;">
+        Data entered here will be processed by the NLP engine (spaCy) in the backend.
+    </p>
+    
+    <form id="profile-form">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required placeholder="Ex: John Doe">
+        </div>
+
+        <div class="form-group">
+            <label for="bio">Biography (For NLP Analysis):</label>
+            <textarea id="bio" rows="4" required placeholder="Tell us about yourself... (System will detect language and keywords)"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="interests">Interests:</label>
+            <input type="text" id="interests" placeholder="Ex: Python, AI, Soccer">
+        </div>
+
+        <button type="submit">Create Profile</button>
+    </form>
+</div>
+
+<div class="card">
+    <h2>Registered Profiles</h2>
+    <p>Real-time sync with Mobile App.</p>
+    <div id="profiles-container" class="profile-list">
+        <!-- JS will populate this -->
+        <p>Loading...</p>
+    </div>
+</div>
+{% endblock %}
