@@ -1,5 +1,75 @@
-KnowMe Backend (API REST & NLP) 🧠Bienvenido al núcleo del ecosistema KnowMe. Este servidor se encarga de procesar la lógica de negocio, gestionar la base de datos y ejecutar los algoritmos de Inteligencia Artificial para el análisis de perfiles.🚀 Características PrincipalesAPI RESTful: Endpoints rápidos para comunicación con Web y Móvil.Procesamiento de Lenguaje Natural (NLP): Uso de spaCy para detectar entidades (nombres, lugares, intereses) en biografías.Detección de Idioma: Clasificación automática de textos (Español/Inglés) usando langdetect.Chatbot Inteligente: Sistema de mensajería con persistencia en base de datos.Base de Datos Relacional: Gestión de usuarios y chats mediante SQL.📚 Explicación de Librerías (Requirements)El proyecto utiliza un stack tecnológico robusto. Aquí explicamos el propósito de las dependencias clave definidas en requirements.txt:Core & Web ServerFlask: El framework micro-web que levanta el servidor y gestiona las rutas (/api/profile, /api/chat).flask-cors: Permite que la App Móvil y la WebApp (en puertos distintos) se conecten sin bloqueos de seguridad.Werkzeug: Librería de utilidades WSGI que trabaja bajo el capó de Flask.Datos & ORMFlask-SQLAlchemy y SQLAlchemy: Permiten interactuar con la base de datos SQLite usando clases de Python (Modelos) en lugar de escribir SQL puro.annotated-types, pydantic: Ayudan en la validación y tipado de datos modernos.Inteligencia Artificial (NLP)spacy: El motor industrial de NLP. Es quien "lee" y "entiende" las biografías.langdetect: Algoritmo especializado en determinar el idioma de un texto corto.numpy: Fundamental para las operaciones matemáticas vectoriales que requiere la IA.blis, thinc, cymem, preshed: Librerías de bajo nivel (C/Cython) que optimizan spaCy para que sea ultra rápido.Utilidadesrequests y urllib3: Para realizar peticiones HTTP internas o externas.click: Manejo de comandos de consola.🛠️ Instalación y EjecuciónActivar Entorno Virtual:source venv/bin/activate
-Instalar Dependencias:pip install -r requirements.txt
-Descargar Modelo de Lenguaje (Necesario para spaCy):python -m spacy download es_core_news_md
-Iniciar Servidor:python app.py
-El servidor correrá en http://0.0.0.0:5000Desarrollado con ❤️ por LeoCodec
+KnowMe Backend (API REST & NLP) 🧠
+
+Bienvenido al núcleo del ecosistema KnowMe. Este servidor se encarga de procesar la lógica de negocio, gestionar la base de datos y ejecutar los algoritmos de Inteligencia Artificial para el análisis de perfiles.
+
+🚀 Características Principales
+
+API RESTful: Endpoints rápidos para comunicación con Web y Móvil.
+
+Procesamiento de Lenguaje Natural (NLP): Uso de spaCy para detectar entidades (nombres, lugares, intereses) en biografías.
+
+Detección de Idioma: Clasificación automática de textos (Español/Inglés) usando langdetect.
+
+Chatbot Inteligente: Sistema de mensajería con persistencia en base de datos.
+
+Base de Datos Relacional: Gestión de usuarios y chats mediante SQL.
+
+📚 Explicación de Librerías (Requirements)
+
+El proyecto utiliza un stack tecnológico robusto. Aquí explicamos el propósito de las dependencias clave definidas en requirements.txt:
+
+Core & Web Server
+
+Flask: El framework micro-web que levanta el servidor y gestiona las rutas (/api/profile, /api/chat).
+
+flask-cors: Permite que la App Móvil y la WebApp (en puertos distintos) se conecten sin bloqueos de seguridad.
+
+Werkzeug: Librería de utilidades WSGI que trabaja bajo el capó de Flask.
+
+Datos & ORM
+
+Flask-SQLAlchemy y SQLAlchemy: Permiten interactuar con la base de datos SQLite usando clases de Python (Modelos) en lugar de escribir SQL puro.
+
+annotated-types, pydantic: Ayudan en la validación y tipado de datos modernos.
+
+Inteligencia Artificial (NLP)
+
+spacy: El motor industrial de NLP. Es quien "lee" y "entiende" las biografías.
+
+langdetect: Algoritmo especializado en determinar el idioma de un texto corto.
+
+numpy: Fundamental para las operaciones matemáticas vectoriales que requiere la IA.
+
+blis, thinc, cymem, preshed: Librerías de bajo nivel (C/Cython) que optimizan spaCy para que sea ultra rápido.
+
+Utilidades
+
+requests y urllib3: Para realizar peticiones HTTP internas o externas.
+
+click: Manejo de comandos de consola.
+
+🛠️ Instalación y Ejecución
+
+Activar Entorno Virtual:
+
+source venv/bin/activate
+
+
+Instalar Dependencias:
+
+pip install -r requirements.txt
+
+
+Descargar Modelo de Lenguaje (Necesario para spaCy):
+
+python -m spacy download es_core_news_md
+
+
+Iniciar Servidor:
+
+python app.py
+
+
+El servidor correrá en http://0.0.0.0:5000
+
+Desarrollado con ❤️ por LeoCodec
